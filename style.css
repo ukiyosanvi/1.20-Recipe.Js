@@ -1,0 +1,134 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background: #f4f6f8;
+}
+
+h1 {
+    text-align: center;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 8px 14px;
+    cursor: pointer;
+}
+
+.recipe-card {
+    background: white;
+    padding: 16px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.recipe-meta {
+    display: flex;
+    gap: 10px;
+    font-size: 0.9rem;
+}
+
+.difficulty.easy {
+    color: green;
+}
+.difficulty.medium {
+    color: orange;
+}
+
+/* Toggle buttons */
+.card-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.toggle-btn {
+    flex: 1;
+    background: #eef1f7;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+/* Ingredients */
+.ingredients-container {
+    display: none;
+    margin-top: 10px;
+    background: #f8f9fa;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+.ingredients-container.visible {
+    display: block;
+}
+
+.ingredients-container ul {
+    list-style: none;
+    padding: 0;
+}
+
+.ingredients-container li::before {
+    content: "✓ ";
+    color: #667eea;
+}
+
+/* Steps */
+.steps-container {
+    display: none;
+    margin-top: 10px;
+    background: #eef6ff;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+.steps-container.visible {
+    display: block;
+}
+
+/* Steps list */
+.steps-list {
+    list-style: none;
+    counter-reset: step;
+    padding: 0;
+}
+
+.steps-list > li {
+    counter-increment: step;
+    padding-left: 30px;
+    position: relative;
+    margin-bottom: 8px;
+}
+
+.steps-list > li::before {
+    content: counter(step);
+    position: absolute;
+    left: 0;
+    background: #667eea;
+    color: white;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    text-align: center;
+}
+
+/* Substeps */
+.substeps-list {
+    list-style: none;
+    margin-top: 5px;
+    padding-left: 15px;
+    border-left: 2px solid #667eea;
+}
+
+.substeps-list li {
+    font-size: 0.9rem;
+}
+
+.substeps-list li::before {
+    content: "→ ";
+    color: #667eea;
+}
